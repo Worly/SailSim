@@ -286,8 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1999157906}
-  targetOffset: {x: -15.6, y: 7.7, z: 0}
-  rotationOffset: {x: -10.89, y: 0, z: 0}
+  targetOffset: {x: 0, y: 10.92, z: -14.22}
+  rotationOffset: {x: -9.5, y: 0, z: 0}
 --- !u!1 &1145096400
 GameObject:
   m_ObjectHideFlags: 0

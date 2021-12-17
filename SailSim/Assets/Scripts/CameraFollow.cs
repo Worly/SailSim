@@ -15,7 +15,7 @@ public class CameraFollow : MonoBehaviour
 
     public void LateUpdate()
     {
-        transform.position = target.position + targetOffset;
+        transform.position = target.position + target.rotation * targetOffset;
 
         transform.LookAt(target);
 

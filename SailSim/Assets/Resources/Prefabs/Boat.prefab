@@ -351,4 +351,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   looseKey: 273
   tightenKey: 274
-  tightenSpeed: 0.5
+  tightenSpeed: 0.3
