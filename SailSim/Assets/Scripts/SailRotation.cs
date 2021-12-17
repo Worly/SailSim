@@ -25,7 +25,7 @@ public class SailRotation : MonoBehaviour
     {
         var force = Vector3.Dot(wind.WindDirectionVector, -transform.right);
 
-        sailRotationSpeed += force * sailAngularAcceleration * Time.deltaTime;
+        sailRotationSpeed += force * sailAngularAcceleration * Mathf.Pow(wind.WindSpeed, 2) * Time.deltaTime;
 
         transform.rotation *= Quaternion.AngleAxis(sailRotationSpeed * Time.deltaTime, transform.up);
 

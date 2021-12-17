@@ -302,7 +302,7 @@ MonoBehaviour:
   wind: {fileID: 0}
   sailTrimInput: {fileID: 5160351986931085831}
   rotationWhenFullyLoose: 90
-  sailAngularAcceleration: 1000
+  sailAngularAcceleration: 40
   sailAngularDeceleration: 3
 --- !u!1 &7875199296003084595
 GameObject:
