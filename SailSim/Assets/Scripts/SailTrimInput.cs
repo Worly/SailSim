@@ -14,6 +14,9 @@ public class SailTrimInput : MonoBehaviour
     public float tightenSpeed;
 
     private float tightness = 1;
+    /// <summary>
+    /// 0 if fully loose, 1 if fully tight
+    /// </summary>
     public float Tightness
     {
         get => tightness;
