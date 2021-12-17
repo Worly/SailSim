@@ -8,14 +8,11 @@ public class CompassUI : MonoBehaviour
     public RectTransform compass;
 
     [SerializeField]
-    public Wind wind;
-
-    [SerializeField]
     public Camera mainCamera;
 
     public void Update()
     {
-        var rotation = mainCamera.transform.rotation.eulerAngles.y - wind.WindDirection;
+        var rotation = mainCamera.transform.rotation.eulerAngles.y;
         compass.rotation = Quaternion.AngleAxis(rotation, Vector3.forward);
     }
 }
