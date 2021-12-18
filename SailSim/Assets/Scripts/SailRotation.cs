@@ -19,15 +19,18 @@ public class SailRotation : MonoBehaviour
     [SerializeField]
     public float sailAngularDeceleration;
 
+    public Vector3 SailForward { get => transform.forward; }
+    public Vector3 SailRight { get => transform.right; }
+
     private float sailRotationSpeed = 0;
 
     public void Update()
     {
-        var force = Vector3.Dot(wind.WindDirectionVector, -transform.right);
+        var dragPercentage = Vector3.Dot(wind.WindDirectionVector, -transform.right);
 
-        sailRotationSpeed += force * sailAngularAcceleration * Mathf.Pow(wind.WindSpeed, 2) * Time.deltaTime;
+        sailRotationSpeed += dragPercentage * sailAngularAcceleration * Mathf.Pow(wind.WindSpeed, 2) * Time.deltaTime;
 
-        transform.rotation *= Quaternion.AngleAxis(sailRotationSpeed * Time.deltaTime, transform.up);
+        transform.localRotation *= Quaternion.AngleAxis(sailRotationSpeed * Time.deltaTime, Vector3.up);
 
         // friction
         sailRotationSpeed -= sailRotationSpeed * sailAngularDeceleration * Time.deltaTime;
@@ -48,7 +51,7 @@ public class SailRotation : MonoBehaviour
         // if angle is greater than trimming angle, reset rotation speed and limit rotation angle
         if (Mathf.Abs(sailAngleFromBoat) >= maxAbsoluteRotation)
         {
-            transform.localRotation = Quaternion.AngleAxis(maxAbsoluteRotation * Mathf.Sign(sailAngleFromBoat), transform.up);
+            transform.localRotation = Quaternion.AngleAxis(maxAbsoluteRotation * Mathf.Sign(sailAngleFromBoat), Vector3.up);
             sailRotationSpeed = 0;
         }
     }

@@ -18,7 +18,7 @@ public class Wind : MonoBehaviour
     public void Awake()
     {
         WindSpeed = scenarioSettings.windSpeed;
-        WindDirection = scenarioSettings.windDirection;
+        WindDirection = scenarioSettings.windDirection % 360;
     }
 
     public void Update()

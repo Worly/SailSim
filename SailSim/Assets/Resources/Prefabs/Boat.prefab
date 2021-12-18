@@ -314,6 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7827269785428229554}
   - component: {fileID: 5160351986931085831}
+  - component: {fileID: 6718853598392196309}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -352,3 +353,20 @@ MonoBehaviour:
   looseKey: 273
   tightenKey: 274
   tightenSpeed: 0.3
+--- !u!114 &6718853598392196309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875199296003084595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4965539ea988ea244a29f956c4d599fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wind: {fileID: 0}
+  sailRotation: {fileID: 7755210272769739193}
+  keelWeight: 450
+  sailDragForce: 50
+  angularDeceleration: 3
