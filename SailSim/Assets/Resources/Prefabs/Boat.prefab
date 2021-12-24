@@ -314,6 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7827269785428229554}
   - component: {fileID: 5160351986931085831}
+  - component: {fileID: 2078150640119515216}
   - component: {fileID: 6718853598392196309}
   m_Layer: 0
   m_Name: Boat
@@ -353,6 +354,21 @@ MonoBehaviour:
   looseKey: 273
   tightenKey: 274
   tightenSpeed: 0.3
+--- !u!114 &2078150640119515216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875199296003084595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9154a55ab2b229249aee4d6c8a652bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftKey: 276
+  rightKey: 275
+  RotationSpeed: 0.8
 --- !u!114 &6718853598392196309
 MonoBehaviour:
   m_ObjectHideFlags: 0

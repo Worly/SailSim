@@ -20,7 +20,8 @@ public class SailTrimInput : MonoBehaviour
     public float Tightness
     {
         get => tightness;
-        set {
+        private set
+        {
             if (value > 1)
                 tightness = 1;
             else if (value < 0)

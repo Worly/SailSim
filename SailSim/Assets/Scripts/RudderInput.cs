@@ -5,36 +5,37 @@ using UnityEngine;
 public class RudderInput : MonoBehaviour
 {
     [SerializeField]
-    public KeyCode left;
+    public KeyCode leftKey;
 
     [SerializeField]
-    public KeyCode right;
+    public KeyCode rightKey;
 
-    [SerializeField] public float Ruddervalue; 
+    [SerializeField]
+    public float RotationSpeed;
 
-
+    private float rotation = 0;
+    /// <summary>
+    /// 0 if fully loose, 1 if fully tight
+    /// </summary>
+    public float Rotation
+    {
+        get => rotation;
+        private set
+        {
+            if (value > 1)
+                rotation = 1;
+            else if (value < -1)
+                rotation = -1;
+            else
+                rotation = value;
+        }
+    }
 
     void Update()
     {
-        
-        if (Input.GetKey(left))
-        {
-            Ruddervalue-=0.005f;       
-        }
-        
-        else if (Input.GetKey(right))
-        {
-             Ruddervalue+=0.005f;
-                
-        }
-        if (Ruddervalue<-1)
-            {
-                Ruddervalue=-1;
-            }
-        else if (Ruddervalue>1)
-            {
-                Ruddervalue=1;
-            }
-         transform.localRotation*=Quaternion.AngleAxis(Ruddervalue/10,Vector3.up);
+        if (Input.GetKey(leftKey))
+            Rotation -= RotationSpeed * Time.deltaTime;
+        else if (Input.GetKey(rightKey))
+            Rotation += RotationSpeed * Time.deltaTime;
     }
 }

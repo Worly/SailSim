@@ -1877,9 +1877,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9154a55ab2b229249aee4d6c8a652bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: 276
-  right: 275
-  Ruddervalue: 0
+  leftKey: 276
+  rightKey: 275
+  RotationSpeed: 0.8
 --- !u!1001 &8019839495540634018
 PrefabInstance:
   m_ObjectHideFlags: 0
