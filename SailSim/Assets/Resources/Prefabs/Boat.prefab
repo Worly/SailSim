@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 5160351986931085831}
   - component: {fileID: 2078150640119515216}
   - component: {fileID: 6718853598392196309}
+  - component: {fileID: 2906760558182869480}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -520,6 +521,114 @@ MonoBehaviour:
   keelWeight: 450
   sailDragForce: 50
   angularDeceleration: 3
+--- !u!114 &2906760558182869480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875199296003084595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88857c43e1c1d14ab1c7890b37d07f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sail: {fileID: 7755210272769739193}
+  wind: {fileID: 0}
+  trimmingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.028609777
+      outSlope: 0.028609777
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 34.953087
+      value: 1
+      inSlope: 0.00018312503
+      outSlope: 0.00018312503
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.26547784
+    - serializedVersion: 3
+      time: 76.8457
+      value: 0
+      inSlope: -0.00007363838
+      outSlope: -0.00007363838
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.19818945
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 180
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 30.022007
+      value: 0
+      inSlope: -0.00035120413
+      outSlope: -0.00035120413
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 30.036428
+      value: 0.75495386
+      inSlope: 0.012304299
+      outSlope: 0.012304299
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.14157341
+    - serializedVersion: 3
+      time: 90.10948
+      value: 1.1291637
+      inSlope: -0.00003007675
+      outSlope: -0.00003007675
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.08280583
+    - serializedVersion: 3
+      time: 180
+      value: 0.690545
+      inSlope: -0.0028484992
+      outSlope: -0.0028484992
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.089520656
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  accelerationFactor: 0.5
 --- !u!1 &8100789683294395846
 GameObject:
   m_ObjectHideFlags: 0
