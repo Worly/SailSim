@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 2078150640119515216}
   - component: {fileID: 6718853598392196309}
   - component: {fileID: 2906760558182869480}
+  - component: {fileID: 1883938150}
   m_Layer: 0
   m_Name: Boat
   m_TagString: Untagged
@@ -661,7 +662,22 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  accelerationFactor: 0.5
+  accelerationFactor: 0.2
+--- !u!114 &1883938150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875199296003084595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d8414f8e0b4b442abaf24699916adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rudderInput: {fileID: 2078150640119515216}
+  boatMovement: {fileID: 2906760558182869480}
+  rotationSpeed: 4
 --- !u!1 &8100789683294395846
 GameObject:
   m_ObjectHideFlags: 0

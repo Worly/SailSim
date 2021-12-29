@@ -15,7 +15,7 @@ public class RudderInput : MonoBehaviour
 
     private float rotation = 0;
     /// <summary>
-    /// 0 if fully loose, 1 if fully tight
+    /// -1 to 1
     /// </summary>
     public float Rotation
     {
@@ -37,5 +37,14 @@ public class RudderInput : MonoBehaviour
             Rotation -= RotationSpeed * Time.deltaTime;
         else if (Input.GetKey(rightKey))
             Rotation += RotationSpeed * Time.deltaTime;
+        else
+        {
+            if (Rotation > 0)
+                Rotation -= RotationSpeed * Time.deltaTime;
+            else if (Rotation < 0)
+                Rotation += RotationSpeed * Time.deltaTime;
+        }
+            
+
     }
 }
