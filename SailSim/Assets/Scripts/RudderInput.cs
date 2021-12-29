@@ -20,6 +20,7 @@ public class RudderInput : MonoBehaviour
     public int rudderReturnFactor;
 
     private float rotation = 0;
+
     public float Rotation
     {
         get => rotation;
