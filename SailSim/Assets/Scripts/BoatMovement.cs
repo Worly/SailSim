@@ -30,6 +30,9 @@ public class BoatMovement : MonoBehaviour
 
     public float CurrentSpeed { get; private set; } = 0;
 
+    [SerializeField]
+    public RudderInput rudder;
+
     public void Update()
     {
         var sailWindAngle = Mathf.Abs((sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360 - 180);
@@ -47,5 +50,16 @@ public class BoatMovement : MonoBehaviour
         CurrentSpeed += speedDelta * accelerationFactor * Time.deltaTime;
 
         transform.position += transform.forward * CurrentSpeed * Time.deltaTime;
+
+        // Smoothly tilts a transform towards a target rotation.
+        float tiltAroundX = 0;
+        float tiltAroundY = (transform.rotation.eulerAngles.y + rudder.Rotation) % 360;
+        float tiltAroundZ = 0;
+
+        // Rotate the cube by converting the angles into a quaternion.
+        Quaternion target = Quaternion.Euler(tiltAroundX, tiltAroundY, tiltAroundZ);
+
+        // Dampen towards the target rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime);
     }
 }
