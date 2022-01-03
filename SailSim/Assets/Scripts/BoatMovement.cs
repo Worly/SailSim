@@ -30,13 +30,26 @@ public class BoatMovement : MonoBehaviour
 
     public float CurrentSpeed { get; private set; } = 0;
 
+    public float GetBoatWindAngle()
+    {
+        return Mathf.Abs((transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360 - 180);
+    }
+
+    public float GetBestSailAngle(float boatWindAngle)
+    {
+        return bestSailAngleCurve.Evaluate(boatWindAngle);
+    }
+
     public void Update()
     {
-        var sailWindAngle = Mathf.Abs((sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360 - 180);
+        var sailWindAngleDownWind = Mathf.Abs((sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360 - 180);
+        var sailWindAngleUpWind = Mathf.Abs((sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360) % 360 - 180);
 
-        var boatWindAngle = Mathf.Abs((transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360 - 180);
+        var sailWindAngle = Mathf.Min(sailWindAngleDownWind, sailWindAngleUpWind);
 
-        var bestSailAngle = bestSailAngleCurve.Evaluate(boatWindAngle);
+        var boatWindAngle = GetBoatWindAngle();
+
+        var bestSailAngle = GetBestSailAngle(boatWindAngle);
 
         var angleDelta = Mathf.Abs(bestSailAngle - sailWindAngle);
 
