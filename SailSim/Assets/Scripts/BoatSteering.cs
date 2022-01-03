@@ -11,13 +11,20 @@ public class BoatSteering : MonoBehaviour
     public BoatMovement boatMovement;
 
     [SerializeField]
-    public float rotationSpeed;
+    public float rudderDistance;
 
     public void Update()
     {
         var currentRotation = transform.rotation.eulerAngles;
 
-        var rotationChange = rudderInput.Rotation * boatMovement.CurrentSpeed * rotationSpeed * Time.deltaTime;
+
+        var rudderRadian = rudderInput.Rotation * Mathf.PI / 180;
+
+        var turningRadius = rudderDistance / Mathf.Tan(rudderRadian);
+
+        var angularVelocity = boatMovement.CurrentSpeed / turningRadius * 180 / Mathf.PI;
+
+        var rotationChange = angularVelocity * Time.deltaTime;
 
         transform.rotation = Quaternion.Euler(currentRotation.x, currentRotation.y + rotationChange, currentRotation.z);
     }
