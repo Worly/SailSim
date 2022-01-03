@@ -10,63 +10,16 @@ public class MainMenuManager : MonoBehaviour
     public ScenarioSettings scenarioSettings;
 
     [SerializeField]
-    public Toggle lowWindSpeedToggle;
-    [SerializeField]
-    public float lowWindSpeed;
-
-    [SerializeField]
-    public Toggle midWindSpeedToggle;
-    [SerializeField]
-    public float midWindSpeed;
-
-    [SerializeField]
-    public Toggle highWindSpeedToggle;
-    [SerializeField]
-    public float highWindSpeed;
+    public Toggle showBestSailPositionToggle;
 
     public void Awake()
     {
-        if (scenarioSettings.windSpeed == lowWindSpeed)
-            lowWindSpeedToggle.isOn = true;
-        else if (scenarioSettings.windSpeed == midWindSpeed)
-            midWindSpeedToggle.isOn = true;
-        else if (scenarioSettings.windSpeed == highWindSpeed)
-            highWindSpeedToggle.isOn = true;
-        else
-        {
-            scenarioSettings.windSpeed = midWindSpeed;
-            midWindSpeedToggle.isOn = true;
-        }
+        showBestSailPositionToggle.isOn = scenarioSettings.showBestSailPosition;
     }
 
-    public void ToggleValueChanged(Toggle toggle)
+    public void ToggleShowBestSailPosition()
     {
-        if (toggle.isOn == false)
-        {
-            if (lowWindSpeedToggle.isOn == midWindSpeedToggle.isOn == highWindSpeedToggle.isOn == false)
-                toggle.isOn = true;
-
-            return;
-        }
-
-        if (toggle == lowWindSpeedToggle)
-        {
-            scenarioSettings.windSpeed = lowWindSpeed;
-            midWindSpeedToggle.isOn = false;
-            highWindSpeedToggle.isOn = false;
-        }
-        else if (toggle == midWindSpeedToggle)
-        {
-            scenarioSettings.windSpeed = midWindSpeed;
-            lowWindSpeedToggle.isOn = false;
-            highWindSpeedToggle.isOn = false;
-        }
-        else if (toggle == highWindSpeedToggle)
-        {
-            scenarioSettings.windSpeed = highWindSpeed;
-            lowWindSpeedToggle.isOn = false;
-            midWindSpeedToggle.isOn = false;
-        }
+        scenarioSettings.showBestSailPosition = showBestSailPositionToggle.isOn;
     }
 
     public void StartSimulation()

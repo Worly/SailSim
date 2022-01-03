@@ -40,6 +40,11 @@ public class BoatMovement : MonoBehaviour
         return bestSailAngleCurve.Evaluate(boatWindAngle);
     }
 
+    public float GetMaxSpeed(float boatWindAngle)
+    {
+        return maxSpeedCurve.Evaluate(boatWindAngle);
+    }
+
     public void Update()
     {
         var sailWindAngleDownWind = Mathf.Abs((sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360 - 180);
@@ -53,7 +58,7 @@ public class BoatMovement : MonoBehaviour
 
         var angleDelta = Mathf.Abs(bestSailAngle - sailWindAngle);
 
-        var maxSpeed = maxSpeedCurve.Evaluate(boatWindAngle) * trimmingCurve.Evaluate(angleDelta) * wind.WindSpeed;
+        var maxSpeed = GetMaxSpeed(boatWindAngle) * trimmingCurve.Evaluate(angleDelta) * wind.WindSpeed;
 
         var speedDelta = maxSpeed - CurrentSpeed;
 

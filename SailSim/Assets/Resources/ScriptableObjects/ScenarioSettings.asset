@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e780ec673f83f47a122de78b9b474b, type: 3}
   m_Name: ScenarioSettings
   m_EditorClassIdentifier: 
+  showBestSailPosition: 1
   windSpeed: 5
   windDirection: 120
