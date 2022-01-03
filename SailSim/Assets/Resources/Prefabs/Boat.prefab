@@ -504,7 +504,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftKey: 276
   rightKey: 275
-  RotationSpeed: 0.8
+  rudderSensitivity: 2
+  rudderMaxAngle: 45
+  rudderReturnFactor: 3
 --- !u!114 &6718853598392196309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,13 +644,22 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.22019184
     - serializedVersion: 3
-      time: 35.904522
+      time: 29.178516
+      value: 0.5018399
+      inSlope: -0.05160597
+      outSlope: -0.09479036
+      tangentMode: 1
+      weightedMode: 2
+      inWeight: 0.020533279
+      outWeight: 0.089675836
+    - serializedVersion: 3
+      time: 86.79588
       value: 0
-      inSlope: -0.0934036
+      inSlope: -0.00090109755
       outSlope: 0.00018226869
       tangentMode: 1
-      weightedMode: 0
-      inWeight: 0.020932825
+      weightedMode: 1
+      inWeight: 0.431708
       outWeight: 1
     - serializedVersion: 3
       time: 180
@@ -677,7 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rudderInput: {fileID: 2078150640119515216}
   boatMovement: {fileID: 2906760558182869480}
-  rotationSpeed: 4
+  rudderDistance: 8
 --- !u!1 &8100789683294395846
 GameObject:
   m_ObjectHideFlags: 0
