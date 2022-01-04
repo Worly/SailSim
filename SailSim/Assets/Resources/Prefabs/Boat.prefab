@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &625630370029027684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7491504125372080358}
+  - component: {fileID: 5579109574457950015}
+  m_Layer: 0
+  m_Name: FrontSail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7491504125372080358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625630370029027684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4792008014703831095}
+  m_Father: {fileID: 2263257039608960219}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5579109574457950015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625630370029027684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db63976fd27445d47bbbc48cfbd3bb3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sailRotation: {fileID: 7755210272769739193}
+  rotationWhenFullyLoose: 15
 --- !u!1 &1083554581038622970
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +321,7 @@ GameObject:
   - component: {fileID: 6725206896077194082}
   - component: {fileID: 3232689512122417562}
   m_Layer: 0
-  m_Name: PrednjeJedro
+  m_Name: PrednjeJedroModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,12 +334,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3000429343880480852}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.0019287693, y: -0.34324715, z: -0.37425297}
-  m_LocalScale: {x: 1.1800637, y: 1.1800636, z: 1.1800636}
+  m_LocalRotation: {x: -0.5686386, y: 0.096827045, z: 0.06763546, w: 0.8140639}
+  m_LocalPosition: {x: -1.2680333, y: -4.340726, z: -5.2467995}
+  m_LocalScale: {x: 1.1800637, y: 1.1800634, z: 1.1800637}
   m_Children: []
-  m_Father: {fileID: 7827269785428229554}
-  m_RootOrder: 2
+  m_Father: {fileID: 7491504125372080358}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6725206896077194082
 MeshFilter:
@@ -376,6 +422,37 @@ Transform:
   m_Father: {fileID: 7827269785428229554}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5341818123244022062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2263257039608960219}
+  m_Layer: 0
+  m_Name: FrontSailHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2263257039608960219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5341818123244022062}
+  m_LocalRotation: {x: -0.17476527, y: -0.0006241922, z: 0.00011078856, w: 0.9846099}
+  m_LocalPosition: {x: 0, y: 5.59, z: 3.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7491504125372080358}
+  m_Father: {fileID: 7827269785428229554}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -20.13, y: -0.077, z: 0.027}
 --- !u!1 &5399297298694238426
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,7 +620,7 @@ Transform:
   m_Children:
   - {fileID: 1364050887993529947}
   - {fileID: 9149466213184290390}
-  - {fileID: 4792008014703831095}
+  - {fileID: 2263257039608960219}
   - {fileID: 7012258888229402934}
   m_Father: {fileID: 0}
   m_RootOrder: 0
