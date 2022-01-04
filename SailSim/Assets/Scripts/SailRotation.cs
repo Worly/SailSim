@@ -11,6 +11,12 @@ public class SailRotation : MonoBehaviour
     public SailTrimInput sailTrimInput;
 
     [SerializeField]
+    public BoatMovement boatMovement;
+
+    [SerializeField]
+    public bool applyApparentWindDirection;
+
+    [SerializeField]
     public float rotationWhenFullyLoose;
 
     [SerializeField]
@@ -26,7 +32,16 @@ public class SailRotation : MonoBehaviour
 
     public void Update()
     {
-        var dragPercentage = Vector3.Dot(wind.WindDirectionVector, -transform.right);
+        var trueWindDirection = wind.WindDirectionVector * wind.WindSpeed;
+
+        var apparentWindDirection = -boatMovement.transform.forward * boatMovement.CurrentSpeed;
+
+        var windDirection = trueWindDirection;
+
+        if (applyApparentWindDirection)
+            windDirection += apparentWindDirection;
+
+        var dragPercentage = Vector3.Dot(windDirection.normalized, -transform.right);
 
         sailRotationSpeed += dragPercentage * sailAngularAcceleration * Mathf.Pow(wind.WindSpeed, 2) * Time.deltaTime;
 

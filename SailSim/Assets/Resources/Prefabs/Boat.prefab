@@ -434,6 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wind: {fileID: 0}
   sailTrimInput: {fileID: 5160351986931085831}
+  boatMovement: {fileID: 2906760558182869480}
   rotationWhenFullyLoose: 90
   sailAngularAcceleration: 40
   sailAngularDeceleration: 3
