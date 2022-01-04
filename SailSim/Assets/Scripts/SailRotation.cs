@@ -38,7 +38,8 @@ public class SailRotation : MonoBehaviour
 
         var windDirection = trueWindDirection;
 
-        if (applyApparentWindDirection)
+        var windSailAngle = (wind.WindDirection - transform.rotation.eulerAngles.y + 360) % 360;
+        if (windSailAngle >= 90 && windSailAngle < 270 &&  applyApparentWindDirection)
             windDirection += apparentWindDirection;
 
         var dragPercentage = Vector3.Dot(windDirection.normalized, -transform.right);
