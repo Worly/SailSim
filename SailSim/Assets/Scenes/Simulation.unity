@@ -686,6 +686,7 @@ MonoBehaviour:
   target: {fileID: 1999157906}
   targetOffset: {x: 0, y: 10.92, z: -14.22}
   rotationOffset: {x: -9.5, y: 0, z: 0}
+  speedFactor: 1
 --- !u!114 &940418683 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2906760558182869480, guid: 4d2f0b01c988e064ab7a202f43b8c7d0, type: 3}

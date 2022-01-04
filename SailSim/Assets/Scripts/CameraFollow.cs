@@ -13,9 +13,14 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     public Vector3 rotationOffset;
 
+    [SerializeField]
+    public float speedFactor;
+
     public void LateUpdate()
     {
-        transform.position = target.position + Quaternion.Euler(0, target.rotation.eulerAngles.y, 0) * targetOffset;
+        var positionDelta = (target.position + Quaternion.Euler(0, target.rotation.eulerAngles.y, 0) * targetOffset) - transform.position;
+
+        transform.position += positionDelta * speedFactor * Time.deltaTime;
 
         transform.LookAt(target);
 
