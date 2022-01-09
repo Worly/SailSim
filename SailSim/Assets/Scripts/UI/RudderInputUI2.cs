@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RudderUI2 : MonoBehaviour
+public class RudderInputUI2 : MonoBehaviour
 {
     [SerializeField]
     public RudderInput rudderInput;
