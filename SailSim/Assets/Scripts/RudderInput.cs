@@ -53,6 +53,6 @@ public class RudderInput : MonoBehaviour
             Rotation -= shift;
 
         else if (Input.GetKey(rightKey) && !Input.GetKey(leftKey))
-            Rotation += shift;        
+            Rotation += shift;    
     }
 }
