@@ -8,13 +8,15 @@ public class RudderInputUI : MonoBehaviour
     [SerializeField]
     public RudderInput rudderInput;
 
-    [SerializeField]
-    public Text rudderinputText;
+    private RectTransform rectTransform;
 
-    
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
+
     void Update()
     {
-        rudderinputText.text=$"Rudder: {rudderInput.Rotation.ToString("0.0")}";
-
+        rectTransform.localRotation = Quaternion.AngleAxis(-rudderInput.Rotation, Vector3.forward);
     }
 }

@@ -656,7 +656,7 @@ MonoBehaviour:
   rightKey: 275
   rudderSensitivity: 2
   rudderMaxAngle: 45
-  rudderReturnFactor: 3
+  rudderReturnFactor: 2
 --- !u!114 &6718853598392196309
 MonoBehaviour:
   m_ObjectHideFlags: 0
