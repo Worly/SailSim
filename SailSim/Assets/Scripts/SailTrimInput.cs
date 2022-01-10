@@ -38,6 +38,5 @@ public class SailTrimInput : MonoBehaviour
 
         if (Input.GetKey(tightenKey))
             Tightness += tightenSpeed * Time.deltaTime;
-        
     }
 }
