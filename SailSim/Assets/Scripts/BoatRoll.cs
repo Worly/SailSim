@@ -42,6 +42,7 @@ public class BoatRoll : MonoBehaviour
 
         transform.localRotation *= Quaternion.AngleAxis(rollRotationSpeed * Time.deltaTime, Vector3.forward);
 
+        // friction
         rollRotationSpeed -= rollRotationSpeed * angularDeceleration * Time.deltaTime;
     }
 }
