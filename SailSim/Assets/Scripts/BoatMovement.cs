@@ -16,7 +16,7 @@ public class BoatMovement : MonoBehaviour
     public AnimationCurve maxSpeedCurve;
 
     [Tooltip("Za dani kut izmedu vjetra i broda, daje vrijednost najboljeg kuta izmedu jedra i vjetra")]
-    [Curve(0, 0, 180, 100)]
+    [Curve(0, 0, 180, 90)]
     [SerializeField]
     public AnimationCurve bestSailAngleCurve;
 
@@ -30,6 +30,13 @@ public class BoatMovement : MonoBehaviour
 
     public float CurrentSpeed { get; private set; } = 0;
 
+    public bool isDownWind()
+    {
+        float sailWindFullAngle = (sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360) % 360;
+        float boatWindFullAngle = (transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360;
+        return sailWindFullAngle < 180 && boatWindFullAngle < 180 || sailWindFullAngle > 180 && boatWindFullAngle > 180;            
+    }
+
     public float GetBoatWindAngle()
     {
         return Mathf.Abs((transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360 - 180);
@@ -37,7 +44,10 @@ public class BoatMovement : MonoBehaviour
 
     public float GetBestSailAngle(float boatWindAngle)
     {
-        return bestSailAngleCurve.Evaluate(boatWindAngle);
+        if (isDownWind())
+            return boatWindAngle - 105;
+        else
+            return bestSailAngleCurve.Evaluate(boatWindAngle);
     }
 
     public float GetMaxSpeed(float boatWindAngle)
@@ -47,10 +57,10 @@ public class BoatMovement : MonoBehaviour
 
     public void Update()
     {
-        var sailWindAngleDownWind = Mathf.Abs((sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360 - 180);
-        var sailWindAngleUpWind = Mathf.Abs((sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360) % 360 - 180);
+        var sailWindAngleUpWind = Mathf.Abs((sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360 - 180);
+        var sailWindAngleDownWind = Mathf.Abs((sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360) % 360 - 180);
 
-        var sailWindAngle = Mathf.Min(sailWindAngleDownWind, sailWindAngleUpWind);
+        var sailWindAngle = isDownWind() ? sailWindAngleDownWind : sailWindAngleUpWind;
 
         var boatWindAngle = GetBoatWindAngle();
 

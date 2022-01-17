@@ -2164,6 +2164,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1883938150, guid: 4d2f0b01c988e064ab7a202f43b8c7d0, type: 3}
+      propertyPath: rudderDistance
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2906760558182869480, guid: 4d2f0b01c988e064ab7a202f43b8c7d0, type: 3}
       propertyPath: wind
       value: 
@@ -2176,6 +2180,10 @@ PrefabInstance:
       propertyPath: wind
       value: 
       objectReference: {fileID: 1742032238}
+    - target: {fileID: 7755210272769739193, guid: 4d2f0b01c988e064ab7a202f43b8c7d0, type: 3}
+      propertyPath: apparentWindFactor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7827269785428229554, guid: 4d2f0b01c988e064ab7a202f43b8c7d0, type: 3}
       propertyPath: m_RootOrder
       value: 6
