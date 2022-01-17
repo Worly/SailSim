@@ -17,6 +17,9 @@ public class SailRotation : MonoBehaviour
     public bool applyApparentWindDirection;
 
     [SerializeField]
+    public float apparentWindFactor;
+
+    [SerializeField]
     public float rotationWhenFullyLoose;
 
     [SerializeField]
@@ -34,7 +37,7 @@ public class SailRotation : MonoBehaviour
     {
         var trueWindDirection = wind.WindDirectionVector * wind.WindSpeed;
 
-        var apparentWindDirection = -boatMovement.transform.forward * boatMovement.CurrentSpeed;
+        var apparentWindDirection = -boatMovement.transform.forward * boatMovement.CurrentSpeed * apparentWindFactor;
 
         var windDirection = trueWindDirection;
 
