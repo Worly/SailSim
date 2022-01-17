@@ -33,6 +33,7 @@ public class BestSailPositionUI : MonoBehaviour
     public void Update()
     {
         var boatWindAngle = boatMovement.GetBoatWindAngle();
+        var boatWindFullAngle = boatMovement.GetBoatWindFullAngle();
 
         if (boatMovement.GetMaxSpeed(boatWindAngle) < 0.01)
             image.enabled = false;
@@ -42,7 +43,8 @@ public class BestSailPositionUI : MonoBehaviour
         int offset;
         int sign;
 
-        var sailWindAngle = (sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360) % 360;
+        var sailWindAngle = boatMovement.GetSailWindFullAngle();
+
         if (sailWindAngle < 90)
         {
             offset = 0;
@@ -52,11 +54,21 @@ public class BestSailPositionUI : MonoBehaviour
         {
             offset = 180;
             sign = 1;
+            if (255 <= boatWindFullAngle && boatWindFullAngle < 345)
+            {
+                offset = 180 - offset;
+                sign = -1 * sign;
+            }
         }
         else if (sailWindAngle < 270)
         {
             offset = 180;
             sign = -1;
+            if (15 <= boatWindFullAngle && boatWindFullAngle < 105)
+            {
+                offset = 180 - offset;
+                sign = -1 * sign;
+            }
         }
         else
         {

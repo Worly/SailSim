@@ -32,14 +32,25 @@ public class BoatMovement : MonoBehaviour
 
     public bool isDownWind()
     {
-        float sailWindFullAngle = (sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360) % 360;
-        float boatWindFullAngle = (transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360;
-        return sailWindFullAngle < 180 && boatWindFullAngle < 180 || sailWindFullAngle > 180 && boatWindFullAngle > 180;            
+        float sailWindFullAngle = GetSailWindFullAngle();
+        float boatWindFullAngle = GetBoatWindFullAngle();
+        return sailWindFullAngle < 180 && boatWindFullAngle < 180 
+            || sailWindFullAngle > 180 && boatWindFullAngle > 180;            
     }
 
     public float GetBoatWindAngle()
     {
         return Mathf.Abs((transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360 - 180);
+    }
+
+    public float GetBoatWindFullAngle()
+    {
+        return (transform.rotation.eulerAngles.y - wind.WindDirection + 360 + 180) % 360;
+    }
+
+    public float GetSailWindFullAngle()
+    {
+        return (sail.transform.rotation.eulerAngles.y - wind.WindDirection + 360) % 360;
     }
 
     public float GetBestSailAngle(float boatWindAngle)
