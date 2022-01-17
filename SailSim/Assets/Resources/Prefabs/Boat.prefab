@@ -583,6 +583,7 @@ MonoBehaviour:
   sailTrimInput: {fileID: 5160351986931085831}
   boatMovement: {fileID: 2906760558182869480}
   applyApparentWindDirection: 1
+  apparentWindFactor: 1.4
   rotationWhenFullyLoose: 75
   sailAngularAcceleration: 40
   sailAngularDeceleration: 3
@@ -711,30 +712,39 @@ MonoBehaviour:
       outWeight: 1
     - serializedVersion: 3
       time: 30.036428
-      value: 0.75495386
-      inSlope: 0.012304299
-      outSlope: 0.012304299
+      value: 0.57908106
+      inSlope: 0.01409605
+      outSlope: 0.01409605
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.14157341
+      inWeight: 1
+      outWeight: 0.16345498
     - serializedVersion: 3
-      time: 90.10948
-      value: 1.1291637
-      inSlope: -0.00003007675
-      outSlope: -0.00003007675
+      time: 90
+      value: 0.8222673
+      inSlope: 0.0007391546
+      outSlope: 0.0007391546
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.08280583
+      inWeight: 0.20348404
+      outWeight: 0.14391632
+    - serializedVersion: 3
+      time: 140
+      value: 0.6724981
+      inSlope: -0.016364655
+      outSlope: -0.015706722
+      tangentMode: 1
+      weightedMode: 3
+      inWeight: 0.41144195
+      outWeight: 0.15471725
     - serializedVersion: 3
       time: 180
-      value: 0.690545
-      inSlope: -0.0028484992
-      outSlope: -0.0028484992
+      value: 0.55349547
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.089520656
+      inWeight: 0.16649513
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -761,22 +771,31 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 1
     - serializedVersion: 3
-      time: 29.970171
-      value: 38.606384
-      inSlope: -0.006251553
-      outSlope: -0.006251553
+      time: 30
+      value: 30
+      inSlope: 0.07640609
+      outSlope: 0.07640609
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.0721845
+      outWeight: 0.05272666
     - serializedVersion: 3
-      time: 180
-      value: 90.11462
+      time: 120
+      value: 75
       inSlope: 0.9196657
-      outSlope: 0.9196657
-      tangentMode: 0
+      outSlope: 0
+      tangentMode: 65
       weightedMode: 0
       inWeight: 0.030111708
+      outWeight: 0
+    - serializedVersion: 3
+      time: 180
+      value: 75
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -803,11 +822,11 @@ MonoBehaviour:
       inWeight: 0.020533279
       outWeight: 0.089675836
     - serializedVersion: 3
-      time: 86.79588
+      time: 90
       value: 0
       inSlope: -0.00090109755
-      outSlope: 0.00018226869
-      tangentMode: 1
+      outSlope: 0
+      tangentMode: 65
       weightedMode: 1
       inWeight: 0.431708
       outWeight: 1
@@ -816,7 +835,7 @@ MonoBehaviour:
       value: 0
       inSlope: 0
       outSlope: 0
-      tangentMode: 34
+      tangentMode: 1
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
