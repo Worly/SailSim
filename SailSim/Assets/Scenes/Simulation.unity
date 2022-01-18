@@ -1631,6 +1631,7 @@ MonoBehaviour:
   shapeGerstnerBatched: {fileID: 1342105118}
   minWindSpeed: 3
   maxWindSpeed: 7
+  minWavesWeight: 0.5
 --- !u!4 &1742032239
 Transform:
   m_ObjectHideFlags: 0

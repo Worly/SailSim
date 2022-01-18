@@ -17,6 +17,9 @@ public class Wind : MonoBehaviour
     [SerializeField]
     public float maxWindSpeed;
 
+    [SerializeField]
+    public float minWavesWeight;
+
     public float WindSpeed { get; private set; }
     public float WindDirection { get; private set; }
 
@@ -37,8 +40,10 @@ public class Wind : MonoBehaviour
         else if (minWindSpeed > WindSpeed)
             minWindSpeed = WindSpeed;
 
-        shapeGerstnerBatched._weight =  (WindSpeed - minWindSpeed)
-                                        / (maxWindSpeed - minWindSpeed);
+        shapeGerstnerBatched._weight = minWavesWeight +
+                                        (WindSpeed - minWindSpeed) /
+                                        (maxWindSpeed - minWindSpeed) *
+                                        (1 - minWavesWeight);
     }
 
     public void Update()
